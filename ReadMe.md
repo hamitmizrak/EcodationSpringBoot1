@@ -1,6 +1,10 @@
 # Ecodation Java Full Stack Developer -2 (17 Nisan 2022)
 * [GitHub](https://github.com/hamitmizrak/EcodationSpringBoot1.git)
-* 
+
+```shell
+git clone https://github.com/hamitmizrak/EcodationSpringBoot1.git
+```
+
 ### Gereksinimler
 Java 17
 intellij idea Ultimate 
@@ -60,9 +64,9 @@ Lombok
 Validation
 
 ## Database
-H2 Database
-Mysql
-Postgresql
+> H2 Database
+> Mysql
+> Postgresql
 
 ---
 ## dependency
