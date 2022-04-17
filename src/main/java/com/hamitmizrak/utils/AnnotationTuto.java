@@ -15,7 +15,14 @@ public class AnnotationTuto {
     //spring boot
     /*
     @SpringBootApplication
+
     @Bean
     @Configuration
+    @Scope
+
+    @Controller
+    @Autowire
+    @GetMapping
+
      */
 }
