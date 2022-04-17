@@ -1,1 +1,1 @@
-alert("JavaScript Buradaydı");
+//alert("JavaScript Buradaydı");
