@@ -48,7 +48,8 @@
         <tr>
             <th th:text="#{id}">ID</th>
             <th th:text="#{name}"></th>
-            <th th:text="#{surname}">SOYADI</th>
+            <th th:text="#{surname}"></th>
+            <th>Sonuç</th>
         </tr>
         </thead>
 
@@ -58,6 +59,9 @@
             <td th:text="${takma_ad.personId}" ></td>
             <td th:text="${takma_ad.personName}" ></td>
             <td th:text="${takma_ad.personSurname}" ></td>
+            <td th:if="${takma_ad.personId>=3}"  th:text="üstünde"></td>
+            <td th:unless="${takma_ad.personId>=3}"  th:text="altında"></td>
+
         </tr>
 
         </tbody>
