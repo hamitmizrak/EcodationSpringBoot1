@@ -44,6 +44,15 @@
     *{} ==> form
     @{} ==> action,js/css
     -->
+    <!--
+    Java
+   th:object="${form_validation_key}"  ==> model.addAttributes("key")
+   th:method="post" ==> java backent gidecek
+   th:action="@{/form}" ==> @GetMapping("/form")
+   th:text="#{register_id}" ==> message.properties
+   th:field="*{registerId}"
+    th:if="${#fields.hasErrors('registerNameAndSurname')}"  ==> eğer bindingResult bir hata varsa
+    -->
 
     <form th:object="${form_validation_key}" th:method="post"  th:action="@{/form}">
         <div class="container">
