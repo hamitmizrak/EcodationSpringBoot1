@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 //lombok
@@ -18,7 +19,8 @@ import java.util.Date;
 //entity
 @Entity
 @Table(name = "computer")
-public class ComputerEntity {
+public class ComputerEntity implements Serializable {
+    public static final long serialVersionUID=1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,7 +35,8 @@ public class ComputerEntity {
     @Column(name="computer_price",columnDefinition = "Decimal(10,2) default '152'")
     private double computerPrice;
 
-    @Column(name="computer_mac_id",unique = true,nullable = false,length = 300,insertable = false)
+    //unique: Duplicate entry
+    @Column(name="computer_mac_id",unique = true,nullable = false,length = 300)
     private String computerMacId;
 
     //büyük verilerde çalışağım
@@ -44,15 +47,12 @@ public class ComputerEntity {
     @Transient
     private int  counter;
 
-    @Column(name="created_date",insertable = false,updatable = false)
+    @Column(name="created_date")
     @Temporal(TemporalType.TIMESTAMP)
     @CreationTimestamp
     //@ColumnDefault("CURRENT_TIMESTAMP") //JPA
     //columnDefinition = "DATE DEFAULT CURRENT_DATE"
     private Date createdDate;
-
-
-
 }
 
 
