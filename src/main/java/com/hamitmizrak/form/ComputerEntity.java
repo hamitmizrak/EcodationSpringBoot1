@@ -1,4 +1,4 @@
-package com.hamitmizrak.entity;
+package com.hamitmizrak.form;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
