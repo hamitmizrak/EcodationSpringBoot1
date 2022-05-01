@@ -1,4 +1,4 @@
-package com.hamitmizrak.pagingsorting;
+package com.hamitmizrak.entity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -25,7 +25,7 @@ public class BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id",updatable = false)
-    private Long personId;
+    private Long id;
 
     //system_current_time
     @Column(name = "system_created_date")
