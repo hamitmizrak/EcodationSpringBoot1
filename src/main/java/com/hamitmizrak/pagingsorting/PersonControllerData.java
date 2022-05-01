@@ -129,7 +129,7 @@ public class PersonControllerData {
     //http://localhost:8080/person/pageandsort/0/10
     @GetMapping("person/pageandsort/{page}/{size}")
     @ResponseBody
-    public String personPagingSortingdynamic(
+    public String personPagingSortingDynamicAsc(
             @PathVariable(name = "page") int page,
             @PathVariable(name = "size") int size
     ) {
