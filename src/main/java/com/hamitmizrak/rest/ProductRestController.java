@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @Log4j2
-public class _01_ManuelRest {
+public class ProductRestController {
     //https://jsoneditoronline.org/#left=local.gesomi&right=local.revibe
 
 
@@ -25,7 +25,6 @@ public class _01_ManuelRest {
                 "  \"soyadi\":\"Mızrak\"\n" +
                 "}";
     }
-
 
 
     //http://localhost:8080/rest2
@@ -41,7 +40,7 @@ public class _01_ManuelRest {
     }
 
     //http://localhost:8080/rest22
-    @GetMapping(value = "rest22",produces = MediaType.APPLICATION_XML_VALUE)
+    @GetMapping(value = "rest22", produces = MediaType.APPLICATION_XML_VALUE)
     public ProductDto getRest22() {
         ProductDto productDto = ProductDto
                 .builder()
@@ -51,8 +50,6 @@ public class _01_ManuelRest {
                 .build();
         return productDto;
     }
-
-
 
 
     //http://localhost:8080/rest3
@@ -162,7 +159,7 @@ public class _01_ManuelRest {
     //PostMapping
     //http://localhost:8080/post/data1
     @PostMapping("/post/data1")
-    public void postProduct(@RequestBody ProductDto productDto){
+    public void postProduct(@RequestBody ProductDto productDto) {
         //Database
         //Dosya
         log.info(productDto);
@@ -171,10 +168,10 @@ public class _01_ManuelRest {
     //PutMapping
     //http://localhost:8080/put/data1
     @PutMapping("/put/data1")
-    public ProductDto putProduct(@RequestBody ProductDto productDto){
+    public ProductDto putProduct(@RequestBody ProductDto productDto) {
         //Database
         //Dosya
-        log.info(productDto+" güncellendi");
+        log.info(productDto + " güncellendi");
         return productDto;
     }
 
@@ -182,12 +179,32 @@ public class _01_ManuelRest {
     //DeleteMapping
     //http://localhost:8080/delete/data1/4
     @DeleteMapping("/delete/data1/{id}")
-    public void  deleteProduct(@RequestBody @PathVariable(name = "id") Long id){
+    public void deleteProduct(@RequestBody @PathVariable(name = "id") Long id) {
         //Database
         //Dosya
         log.info(" silindi");
     }
 
+    //////////////////////HEADER///////////////////////////////////////////////////////
+     //Unutma: Veri alan kişinin URL Tıklayalım
+    //Header
+    //server veri alsın
+    //http://localhost:8080/rest/header
+    @GetMapping("/rest/header")
+    public ResponseEntity<?> getHeader(@RequestHeader(value = "key_client", defaultValue = "default value") String data) {
+        //Clienttan veri geliyor.
+        String clientHeaderData = "@Controller gelen veri: " + data;
+        log.info(clientHeaderData);
+        return ResponseEntity.ok(clientHeaderData);
+    }
+
+
+    //Server veri göndersin
+    //http://localhost:8080/rest/header2
+    @GetMapping("/rest/header2")
+    public ResponseEntity<?> getHeader2() {
+        return ResponseEntity.ok().header("key_server", "HeaderServerData55").body("@RestController");
+    }
 
 
 }
