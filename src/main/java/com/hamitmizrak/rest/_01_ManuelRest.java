@@ -1,6 +1,7 @@
 package com.hamitmizrak.rest;
 
 import com.hamitmizrak.dto.ProductDto;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,6 +24,20 @@ public class _01_ManuelRest {
     //http://localhost:8080/rest2
     @GetMapping("rest2")
     public ProductDto getRest2(){
+        ProductDto productDto=ProductDto
+                .builder()
+                .productId(1L)
+                .productName("Ürün Adı")
+                .productTrade("ürün markası")
+                .build();
+        return productDto;
+    }
+
+
+    //http://localhost:8080/rest3
+    //Spring Rest: defaultta Json gelir
+    @GetMapping(value = "rest3",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ProductDto getRest3(){
         ProductDto productDto=ProductDto
                 .builder()
                 .productId(1L)
