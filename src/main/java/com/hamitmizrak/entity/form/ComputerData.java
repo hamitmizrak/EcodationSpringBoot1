@@ -1,4 +1,4 @@
-package com.hamitmizrak.form;
+package com.hamitmizrak.entity.form;
 
 import com.hamitmizrak.entity.repository.IComputer;
 import lombok.extern.log4j.Log4j2;
@@ -41,7 +41,7 @@ public class ComputerData {
             log.info(computer);
         }
         return "computer Kaydedildi";
-    }
+    }   
 
 
 

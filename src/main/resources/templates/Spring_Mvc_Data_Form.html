@@ -75,7 +75,7 @@
 
             <td><a th:href="@{/computer/delete/{id}(id=${temp.computerId})}" class="btn btn-danger">Delete</a> </td>
             <td><button class="btn btn-success">Update</button> </td>
-            <td> <a   type="button" class="btn btn-primary btn-md" data-bs-toggle="modal" data-bs-target="#modelShowId">
+            <td> <a th:href="@{/computer/{id}(id=${temp.computerId})}"   class="btn btn-primary btn-md" data-bs-toggle="modal" data-bs-target="#modelShowId">
                 Show
             </a></td>
         </tr>
@@ -108,31 +108,25 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr >
-                            <td >Data1</td>
-                            <td >Data1</td>
-                            <td >Data1</td>
-                            <td >Data1</td>
-                            <td >Data1</td>
+                        <tr th:each="temp:${show_key}">
+                            <td th:text="${temp.computerId}"></td>
+                            <td th:text="${temp.computerName}"></td>
+                            <td th:text="${temp.computerPrice}"></td>
+                            <td th:text="${temp.computerMacId}"></td>
+                            <td th:text="${temp.createdDate}"></td>
 
-<!--                            <td><a th:href="@{/computer/{id}(id=${temp.computerId})}" class="btn btn-primary">Show</a> </td>-->
-
-<!--                            <td><a th:href="@{/computer/delete/{id}(id=${temp.computerId})}" class="btn btn-danger">Delete</a> </td>-->
-<!--                            <td><button class="btn btn-success">Update</button> </td>-->
-<!--                            <td> <a   type="button" class="btn btn-primary btn-md" data-bs-toggle="modal" data-bs-target="#modelShowId">-->
-<!--                                Show-->
-<!--                            </a></td>-->
+                            <td><a th:href="@{/computer/delete/{id}(id=${temp.computerId})}" class="btn btn-danger">Delete</a> </td>
+                            <td><button class="btn btn-success">Update</button> </td>
+                            <td> <a   type="button" class="btn btn-primary btn-md" data-bs-toggle="modal" data-bs-target="#modelShowId">
+                                Show
+                            </a></td>
                         </tr>
                         </tbody>
                     </table>
-
                 </div>
-
             </div>
         </div>
     </div>
-
-
 
     <!-- Modal Create -->
     <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">

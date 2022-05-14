@@ -1,6 +1,6 @@
 package com.hamitmizrak.entity.repository;
 
-import com.hamitmizrak.form.ComputerEntity;
+import com.hamitmizrak.entity.form.ComputerEntity;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
