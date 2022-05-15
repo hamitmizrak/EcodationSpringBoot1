@@ -1,4 +1,4 @@
-package com.hamitmizrak.rest;
+package com.hamitmizrak.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
